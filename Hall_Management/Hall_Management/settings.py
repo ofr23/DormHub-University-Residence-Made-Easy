@@ -35,10 +35,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    # 'Varsity_Admin.apps.Varsity_AdminConfig',
-    # 'Student.apps.StudentConfig',
-    # 'Staff.apps.StaffConfig',
-    # 'Provost.apps.ProvostConfig',
+    'Varsity_Admin.apps.VarsityAdminConfig',
+    'Student.apps.StudentConfig',
+    'Staff.apps.StaffConfig',
+    'Provost.apps.ProvostConfig',
+    "Hall_Admin.apps.HallAdminConfig",
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'e_commerce.urls'
+ROOT_URLCONF = 'Hall_Management.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'e_commerce.wsgi.application'
+WSGI_APPLICATION = 'Hall_Management.wsgi.application'
 
 
 # Database
