@@ -82,7 +82,7 @@
         </select>
         <select name="admin" id="">
           <option selected disabled>Select Admin</option>
-          {%for provost in adminList%}
+          {%for admin in adminList%}
           <option value="{{admin.adminId}}">{{admin.name}}</option>
           {%endfor%}
         </select>
