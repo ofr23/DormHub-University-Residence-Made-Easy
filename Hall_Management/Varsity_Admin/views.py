@@ -55,3 +55,4 @@ def varsityAdmin(request):
     return render(request,'varsityAdmin.html',cont)
 def allSession(request):
     return render(request,'allSession.html')
+
