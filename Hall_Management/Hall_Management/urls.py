@@ -9,6 +9,7 @@ urlpatterns = [
     path('provost/',include('Provost.urls')),
     path('staff/',include('Staff.urls')),
     path('student/',include('Student.urls')),
+    path('authentication/',include('Authentication.urls'))
 
 
 ]
