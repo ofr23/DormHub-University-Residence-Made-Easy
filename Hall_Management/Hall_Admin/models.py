@@ -1,5 +1,6 @@
 from django.db import models
 from Provost.models import *
+from Varsity_Admin.models import *
 # Create your models here.
 
 class HallAdmin(models.Model):
