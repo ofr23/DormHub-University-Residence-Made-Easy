@@ -7,10 +7,6 @@ from io import BytesIO
 from django.utils.html import strip_tags
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
-<<<<<<< HEAD
-
-# Create your views here.
-=======
 from django.template.loader import get_template,render_to_string
 from django.views import View
 from xhtml2pdf import pisa
