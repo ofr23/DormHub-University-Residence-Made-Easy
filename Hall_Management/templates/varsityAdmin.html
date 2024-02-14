@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background: rgb(208, 208, 208);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      form {
+        background: whitesmoke;
+        padding: 30px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-bottom: 40px;
+      }
+      input {
+        width: 250px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      button {
+        background: rgb(51, 193, 249);
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 700;
+        font-size: 18px;
+        border: none;
+        padding: 10px;
+        width: 200px;
+      }
+      select {
+        padding: 20px;
+        width: 300px;
+        margin-bottom: 20px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .hall button {
+        background: cornflowerblue;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="session">
+      <form method="POST" enctype="multipart/form-data">
+        <h2>Create Session</h2>
+        {%csrf_token%}
+        <input type="number" name="sess" placeholder="Enter Session" />
+        <label for="">Upload Student File</label>
+        <input type="file" name="csv" />
+        <button type="submit" name="session">Create</button>
+      </form>
+    </div>
+    <div class="hall">
+      <form method="POST">
+        {%csrf_token%}
+        <h2>Create Hall</h2>
+        <input type="text" name="name" placeholder="Enter Name" />
+        <input type="number" name="id" placeholder="Enter Identity Number" />
+        <select name="provost" id="">
+          <option selected disabled>Select Provost</option>
+          {%for provost in provostList%}
+          <option value="{{provost.provostId}}">{{provost.name}}</option>
+          {%endfor%}
+        </select>
+        <select name="admin" id="">
+          <option selected disabled>Select Admin</option>
+          {%for admin in adminList%}
+          <option value="{{admin.adminId}}">{{admin.name}}</option>
+          {%endfor%}
+        </select>
+        <button type="submit" name="hall">Create</button>
+      </form>
+    </div>
+  </body>
+</html>

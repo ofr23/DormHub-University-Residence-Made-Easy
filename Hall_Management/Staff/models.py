@@ -1,5 +1,5 @@
 from django.db import models
-from Hall_Admin.models import *
+from Varsity_Admin.models import *
 # Create your models here.
 class Staff(models.Model):
     staffId=models.IntegerField(default=0,null=True,blank=True)
