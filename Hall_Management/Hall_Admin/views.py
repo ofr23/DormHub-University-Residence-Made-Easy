@@ -22,19 +22,12 @@ import csv
 import random
 import pandas as pd
 from Student.models import *
+from Hall_Admin.models import *
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group,User
 import codecs
 def hallAdmin(request):
-    # if 'session' in request.POST:
-       
-    #     newSession=Session(
-    #         session=request.POST.get('sess'),
-    #         csvFile=request.FILES.get('csv')
-    #     )
-    #     newSession.save()
-    #     with codecs.open(newSession.csvFile, 'r', encoding='ISO-8859-1') as f:
-    #         df = pd.read_csv(f)
-    #         print(df.values)
-    #     return redirect('/hallAdmin')
+    admin=HallAdmin.objects.get(email=request.user.email)
+    if 'change' in request.POST:
+        print('ok')
     return render(request,'hallAdmin.html')
