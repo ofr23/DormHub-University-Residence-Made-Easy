@@ -21,3 +21,5 @@ import json
 import random
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group,User
+def hallAdmin(request):
+    return render(request,'hallAdmin.html')
