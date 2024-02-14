@@ -11,3 +11,4 @@ class Student(models.Model):
     hall=models.ForeignKey(Hall,on_delete=models.CASCADE,null=True)
     def __str__(self):
         return str(self.name)+" - "+str(self.studentId)
+    
