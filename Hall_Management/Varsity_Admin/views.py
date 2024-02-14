@@ -59,4 +59,4 @@ def varsityAdmin(request):
     return render(request,'varsityAdmin.html',cont)
 def allSession(request):
     return render(request,'allSession.html')
->>>>>>> ec39bbba1eceaaeff67fd72a6727f702d739340f
+
