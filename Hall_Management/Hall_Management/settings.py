@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Provost.apps.ProvostConfig',
     "Hall_Admin.apps.HallAdminConfig",
     'django.contrib.contenttypes',
+    'Authentication.apps.AuthenticationConfig',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
