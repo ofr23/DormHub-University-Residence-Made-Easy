@@ -1,17 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background: black;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .con form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 20px;
+        background: whitesmoke;
+      }
+      .con form > * {
+        width: 300px;
+        margin-bottom: 20px;
+        padding: 16px;
+        border: none;
+        font-family: "Courier New", Courier, monospace;
+      }
+      h2 {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px white;
+        font-size: 80px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin-bottom: 20px;
+      }
+      .con button {
+        background: salmon;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .jj {
+        border: none;
+        padding: 10px;
+        color: white;
+        width: 60px;
+        margin-bottom: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .jj:hover {
+        background: whitesmoke;
+        color: black;
+      }
+      .hall {
+        background-color: black;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-grid-dots' width='20' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23ffffff1f' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='5' cy='5' r='1' /%3E%3Ccircle cx='12' cy='5' r='1' /%3E%3Ccircle cx='19' cy='5' r='1' /%3E%3Ccircle cx='5' cy='12' r='1' /%3E%3Ccircle cx='12' cy='12' r='1' /%3E%3Ccircle cx='19' cy='12' r='1' /%3E%3Ccircle cx='5' cy='19' r='1' /%3E%3Ccircle cx='12' cy='19' r='1' /%3E%3Ccircle cx='19' cy='19' r='1' /%3E%3C/svg%3E");
+        padding: 2%;
+        background-size: 2%;
+      }
+      h3 {
+        text-align: center;
+        color: white;
+        border: 2px dashed white;
+        padding: 20px;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
     <div class="con">
-      <h1>{{}} Hall</h1>
+      <h2>{{hall.name}} Hall</h2>
+      {%if changeStructure is 0%}
       <form method="POST">
         {%csrf_token%}
-        <input type="text" />
+        <input
+          type="number"
+          placeholder="Enter Number of Floors"
+          name="floor"
+        />
+        <input
+          type="number"
+          placeholder="Enter Capcity per room"
+          name="capacity"
+        />
+        <button type="submit" name="change">Submit</button>
       </form>
+      {%endif%}
+      <div class="hall">
+        {%for index,room in queryDict.items%} {%if room%}
+        <h3>Level - {{index}}</h3>
+        {%for i in room%} {%if i.roomId|divisibleby:10%}
+        <button
+          class="jj"
+          style="font-size: 12px; width: 80px; background: red"
+        >
+          Bathroom
+        </button>
+        {%else%}
+        <button class="jj" style="font-size:10px;background: {{i.color}}">
+          {{i.roomId}}
+        </button>
+        {%endif%} {%endfor%} {%endif%} {%endfor%}
+      </div>
     </div>
   </body>
 </html>

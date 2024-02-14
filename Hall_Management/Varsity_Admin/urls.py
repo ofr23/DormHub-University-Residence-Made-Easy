@@ -7,7 +7,6 @@ from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
 urlpatterns = [
     path('',views.varsityAdmin,name='varsityAdmin'),
-    path('allSession/',views.allSession,name='allSession'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

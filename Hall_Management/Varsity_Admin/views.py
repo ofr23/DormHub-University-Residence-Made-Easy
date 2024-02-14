@@ -53,6 +53,3 @@ def varsityAdmin(request):
         'adminList':adminList
     }
     return render(request,'varsityAdmin.html',cont)
-def allSession(request):
-    return render(request,'allSession.html')
-

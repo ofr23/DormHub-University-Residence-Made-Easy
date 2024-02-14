@@ -35,16 +35,16 @@ def logIn(request):
             login(request,authenticate(request,username=user.username,password=user.password))
             redirectUrl="/provost"
             return redirect(redirectUrl)
-        if request.POST.get('type')=='1':
+        if request.POST.get('type')=='2':
             user=HallAdmin.objects.get(email=request.POST.get('email'))
             login(request,authenticate(request,username=user.username,password=user.password))
             redirectUrl="/hallAdmin/"
             return redirect(redirectUrl)
-        if request.POST.get('type')=='1':
+        if request.POST.get('type')=='3':
             login(request,authenticate(request,username=user.username,password=user.password))
             redirectUrl="/aadmin/"+str(user.shopId)
             return redirect(redirectUrl)
-        if request.POST.get('type')=='1':
+        if request.POST.get('type')=='4':
             login(request,authenticate(request,username=user.username,password=user.password))
             redirectUrl="/aadmin/"+str(user.shopId)
             return redirect(redirectUrl)
