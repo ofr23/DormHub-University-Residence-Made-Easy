@@ -18,8 +18,23 @@ from django.utils import timezone
 from django.db import IntegrityError
 from django.contrib import messages
 import json
+import csv
 import random
+import pandas as pd
+from Student.models import *
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group,User
+import codecs
 def hallAdmin(request):
+    # if 'session' in request.POST:
+       
+    #     newSession=Session(
+    #         session=request.POST.get('sess'),
+    #         csvFile=request.FILES.get('csv')
+    #     )
+    #     newSession.save()
+    #     with codecs.open(newSession.csvFile, 'r', encoding='ISO-8859-1') as f:
+    #         df = pd.read_csv(f)
+    #         print(df.values)
+    #     return redirect('/hallAdmin')
     return render(request,'hallAdmin.html')

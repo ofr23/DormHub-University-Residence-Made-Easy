@@ -59,10 +59,10 @@
   </head>
   <body>
     <div class="session">
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         <h2>Create Session</h2>
         {%csrf_token%}
-        <input type="number" name="session" placeholder="Enter Session" />
+        <input type="number" name="sess" placeholder="Enter Session" />
         <label for="">Upload Student File</label>
         <input type="file" name="csv" />
         <button type="submit" name="session">Create</button>
@@ -82,7 +82,7 @@
         </select>
         <select name="admin" id="">
           <option selected disabled>Select Admin</option>
-          {%for provost in adminList%}
+          {%for admin in adminList%}
           <option value="{{admin.adminId}}">{{admin.name}}</option>
           {%endfor%}
         </select>
