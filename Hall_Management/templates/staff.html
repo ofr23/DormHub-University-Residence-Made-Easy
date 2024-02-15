@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="topbar">
+      <form method="POST">
+        {%csrf_token%}
+        <button type="submit" name="visitor">Visitor Log</button>
+        <button>Button2</button>
+        <button>Button3</button>
+        <button>Button4</button>
+        <button>Button5</button>
+      </form>
+    </div>
+    {%if flag is 1%} {%endif%}
+  </body>
+</html>

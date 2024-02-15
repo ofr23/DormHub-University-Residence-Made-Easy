@@ -23,6 +23,7 @@ import random
 import pandas as pd
 from Student.models import *
 from Hall_Admin.models import *
+from Staff.models import *
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group,User
 import codecs
@@ -45,8 +46,9 @@ def logIn(request):
             redirectUrl="/aadmin/"+str(user.shopId)
             return redirect(redirectUrl)
         if request.POST.get('type')=='4':
+            user=Staff.objects.get(email=request.POST.get('email'))
             login(request,authenticate(request,username=user.username,password=user.password))
-            redirectUrl="/aadmin/"+str(user.shopId)
+            redirectUrl="/staff"
             return redirect(redirectUrl)
     return render(request,'logIn.html')
 def register(request):
@@ -73,7 +75,7 @@ def register(request):
             user=User.objects.create_user(username=newUser.username,email=newUser.email,password=newUser.password)
             return redirect('/authentication')
         if request.POST.get('type')=='4':
-            newUser=Provost.objects.get(email=request.POST.get('email'))
+            newUser=Staff.objects.get(email=request.POST.get('email'))
             newUser.username=request.POST.get('username')
             newUser.password=request.POST.get('password')
             newUser.save()
