@@ -15,6 +15,8 @@ class Student(models.Model):
     password=models.CharField(max_length=100,blank=True,null=True)
     hall=models.ForeignKey(Hall,on_delete=models.CASCADE,null=True)
     session=models.ForeignKey(Session,on_delete=models.CASCADE,null=True,blank=True)
+    room=models.ForeignKey(Room,on_delete=models.CASCADE,null=True)
+    studentType=models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return str(self.name)+" - "+str(self.studentId)
     

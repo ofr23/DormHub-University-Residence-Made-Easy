@@ -1,9 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background: black;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      h2 {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2px whitesmoke;
+        font-size: 80px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin-bottom: 20px;
+      }
+
+      .jj {
+        border: none;
+        color: white;
+        width: 80px;
+        font-size: 17px;
+        padding: 10px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .hall {
+        background-color: black;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-grid-dots' width='20' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23ffffff1f' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='5' cy='5' r='1' /%3E%3Ccircle cx='12' cy='5' r='1' /%3E%3Ccircle cx='19' cy='5' r='1' /%3E%3Ccircle cx='5' cy='12' r='1' /%3E%3Ccircle cx='12' cy='12' r='1' /%3E%3Ccircle cx='19' cy='12' r='1' /%3E%3Ccircle cx='5' cy='19' r='1' /%3E%3Ccircle cx='12' cy='19' r='1' /%3E%3Ccircle cx='19' cy='19' r='1' /%3E%3C/svg%3E");
+        padding: 6%;
+        background-size: 2%;
+      }
+      h3 {
+        text-align: center;
+        color: white;
+        border: 2px dashed white;
+        padding: 20px;
+        width: 100%;
+      }
+      .ii {
+        background: black;
+        padding: 5px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-left: 15px;
+      }
+      .level {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .level > * {
+        margin-right: 10px;
+      }
+      .notun {
+        background: rgba(92, 84, 84, 0.757);
+        position: absolute;
+        width: 100%;
+        height: 200%;
+        z-index: 5;
+        top: 0;
+      }
+      #alert1 {
+        background: whitesmoke;
+        position: absolute;
+        left: 40%;
+        z-index: 400;
+        padding: 40px;
+        top: 30%;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .sub {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .ind {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ind > * {
+        margin-right: 20px;
+      }
+      .sub input {
+        border: none;
+        width: 50px;
+        font-weight: 700;
+      }
+      select {
+        width: 400px;
+        padding: 10px;
+        margin-top: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      option {
+        padding: 20px;
+        border: 2px solid black;
+        width: 100%;
+        font-size: 18px;
+      }
+      button {
+        width: 200px;
+        padding: 10px;
+        background: black;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Courier New", Courier, monospace;
+        border: none;
+        margin-top: 20px;
+      }
+      .sub button {
+        width: 200px;
+        padding: 10px;
+        background: rgb(21, 176, 18);
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Courier New", Courier, monospace;
+        border: none;
+        margin-top: 20px;
+      }
+      .ind .remove {
+        width: 100px;
+        padding: 7px;
+        margin: 0;
+        background: crimson;
+        font-size: 15px;
+      }
+      .ok {
+        margin-top: 10px;
+        border: 2px solid black;
+        width: 400px;
+      }
+      .ok > * {
+        padding: 2px;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    {% for msg in messages%} {% if 'allocation' in msg.tags%}
+    <div class="notun"></div>
+    <div
+      id="alert1"
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <form method="POST" class="sub">
+        {%csrf_token%}
+        <div class="ind">
+          <label for="Room">Room No</label>
+          <input
+            type="number"
+            name="room"
+            value="{{msg.message.room}}"
+            readonly
+          />
+        </div>
+        {%for resident in msg.message.residents%}
+        <div class="ind ok">
+          <h4>{{resident.studentId}}</h4>
+          <h4>{{resident.name}}</h4>
+          <h4>{{resident.studentType}}</h4>
+          <button
+            class="remove"
+            type="submit"
+            name="remove"
+            value="{{resident.studentId}}"
+          >
+            Remove
+          </button>
+        </div>
+        {%endfor%} {%if msg.message.available is not 0%}
+        <select name="select" id="">
+          <option selected disabled>Select From Students</option>
+          {%for o in msg.message.notAllocated%}
+          <option value="{{o.studentId}}">
+            <h4 style="margin-right: 20px">{{o.studentId}}</h4>
+            <h4 style="margin-right: 20px">{{o.name}}</h4>
+            <h4>{{o.studentType}}</h4>
+          </option>
+          {%endfor%}
+        </select>
+        <button type="submit" name="add">Allocate</button>
+        {%endif%}
+      </form>
+      <button class="button" onclick="history.back()">Close</button>
+    </div>
+    {%endif%} {%endfor%}
+    <div class="con">
+      <h2>{{hall.name}} Hall</h2>
+      <div class="hall">
+        {%for index,room in queryDict.items%} {%if room%}
+        <h3>Level - {{index}}</h3>
+        <div class="level">
+          {%for i in room%} {%if i.0.roomId|divisibleby:10%}
+          <button
+            class="jj"
+            style="font-size: 12px; width: 80px; background: red"
+            disabled
+          >
+            Bathroom
+          </button>
+          {%else%}
+
+          <form method="POST">
+            {%csrf_token%}
+            <button
+              type="submit"
+              name="allocate"
+              value="{{i.0.roomId}}"
+              class="jj"
+              style="font-size:10px;background: {{i.0.color}}"
+            >
+              {{i.0.roomId}} <span class="ii">{{i.1}}</span>
+            </button>
+          </form>
+          {%endif%} {%endfor%} {%endif%} {%endfor%}
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

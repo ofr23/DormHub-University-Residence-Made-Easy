@@ -28,7 +28,43 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group,User
 import codecs
 def provost(request):
-    return render(request,'provost.html')
+    provost=Provost.objects.get(email=request.user.email)
+    hall=Hall.objects.get(provost=provost)
+    rooms=Room.objects.filter(hall=hall)
+    queryDict={}
+    for o in range(1,8):
+        queryDict[o]=[]
+    for room in rooms:
+        ro=Room.objects.get(roomId=room.roomId,hall=hall)
+        available=room.capacity-len(Student.objects.filter(hall=hall,
+                                                        room=ro))
+        queryDict[int(room.roomId/100)].append((room,available)) 
+    if 'allocate' in request.POST:
+        room=Room.objects.get(roomId=int(request.POST.get('allocate')),
+                              hall=hall)
+        residents=Student.objects.filter(room=room,hall=hall)
+        available=room.capacity-len(Student.objects.filter(hall=hall,
+                                                           room=room))
+        notAllocated=Student.objects.filter(room=None,hall=hall)
+        messages.success(request,{'available':available,'room':room.roomId,
+                                  'residents':residents,'notAllocated':notAllocated},
+                                   extra_tags='allocation')   
+    if 'add' in request.POST:
+        student=Student.objects.get(studentId=request.POST.get('select'))
+        room=Room.objects.get(hall=hall,roomId=int(request.POST.get('room')))
+        student.room=room
+        student.save()
+        return redirect('/provost')
+    if 'remove' in request.POST:
+        student=Student.objects.get(studentId=request.POST.get('remove'))
+        student.room=None
+        student.save()
+        return redirect('/provost')
+    context={
+        'hall':hall,
+        'queryDict':queryDict
+    }
+    return render(request,'provost.html',context)
 def addStudent(request):
     sessions=Session.objects.filter()
     provost=Provost.objects.get(email=request.user.email)
@@ -46,6 +82,7 @@ def addStudent(request):
                     name=row[1],
                     hall=hall,
                     email=row[2],
+                    studentType=row[3]
                 )
                 newStudent.save()
         return redirect('/provost')
