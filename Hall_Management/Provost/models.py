@@ -1,9 +1,9 @@
 from django.db import models
 class Provost(models.Model):
-    provostId=models.IntegerField(default=0,null=True,blank=True)
+    provostId=models.IntegerField(default=1,null=True)
     name=models.CharField(max_length=100,blank=True,null=True)
-    email=models.EmailField(max_length=100,blank=True,null=True)
-    username=models.CharField(max_length=100,blank=True,null=True)
-    password=models.CharField(max_length=100,blank=True,null=True)
+    email=models.EmailField(unique=True,max_length=100)
+    username=models.CharField(max_length=100,default="None")
+    password=models.CharField(max_length=100,default="None")
     def __str__(self):
-        return str(self.name)+" - "+str(self.provostId)
+        return str(self.email)
