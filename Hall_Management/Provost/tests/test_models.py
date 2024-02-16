@@ -2,6 +2,7 @@ from django.db import IntegrityError
 from django.test import TestCase
 from ..models import Provost  # Update path based on model location
 
+
 class ProvostModelTests(TestCase):
 
     def test_create_provost(self):

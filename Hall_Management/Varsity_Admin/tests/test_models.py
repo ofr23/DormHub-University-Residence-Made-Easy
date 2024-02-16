@@ -2,7 +2,8 @@ from django.db import IntegrityError
 from django.test import TestCase
 from Varsity_Admin.models import *
 from Hall_Admin.models import HallAdmin
-from django.db import transaction
+
+
 class VarsityAdminModelTests(TestCase):
 
     def test_create_varsity_admin(self):
@@ -19,6 +20,7 @@ class VarsityAdminModelTests(TestCase):
         self.assertEqual(admin.username, "johndoe")
 
     # Add more test cases for VarsityAdmin as needed (e.g., validation rules)
+
 
 class HallModelTests(TestCase):
 
@@ -43,11 +45,13 @@ class HallModelTests(TestCase):
 
     # Add more test cases for Hall as needed (e.g., unique constraints, field limitations)
 
+
 class RoomModelTests(TestCase):
 
     def setUp(self):
         # Create required objects (hall)
-        hall = Hall.objects.create(name="Test Hall", hallAdmin=HallAdmin.objects.create(email="halladmin@example.com"), provost=Provost.objects.create(email="provost@example.com"))
+        hall = Hall.objects.create(name="Test Hall", hallAdmin=HallAdmin.objects.create(email="halladmin@example.com"),
+                                   provost=Provost.objects.create(email="provost@example.com"))
         self.hall = hall
 
     def test_create_room(self):
@@ -66,5 +70,3 @@ class RoomModelTests(TestCase):
         """Tests the __str__ method for clarity and correctness."""
         room = Room.objects.create(roomId=102, capacity=30, hall=self.hall, color="green")
         self.assertEqual(str(room), "102 - 0")
-
-  

@@ -2,6 +2,7 @@ from django.db import IntegrityError
 from django.test import TestCase
 from Hall_Admin.models import HallAdmin
 
+
 class HallAdminModelTests(TestCase):
 
     def test_create_hall_admin(self):
