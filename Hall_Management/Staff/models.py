@@ -11,7 +11,7 @@ class Staff(models.Model):
     email = models.EmailField(unique=True, max_length=100)
     username = models.CharField(max_length=100, default='')
     password = models.CharField(max_length=100, default='')
-    hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         """

@@ -2,10 +2,10 @@ from django.urls import path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import include, path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('app/', include('myapp.urls')),  # Example path including app-specific URLs
+    # Example path including app-specific URLs
 ]
 
 # Static and media URLs for development

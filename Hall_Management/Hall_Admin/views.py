@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from Hall_Admin.models import *
+from Varsity_Admin.models import *
 
 
 # Function to handle the hall admin view

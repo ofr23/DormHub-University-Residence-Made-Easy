@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from Student.models import *
 from django.shortcuts import redirect
-
-
+from Varsity_Admin.models import *
+from Provost.models import *
+from Hall_Admin.models import *
+from Staff.models import *
 def varsityAdmin(request):
     # Check if a new session is being added
     if 'session' in request.POST:
@@ -19,12 +21,12 @@ def varsityAdmin(request):
     # Get lists of provosts and hall admins for rendering in the template
     provostList = Provost.objects.all()
     adminList = HallAdmin.objects.all()
-
+    staffList=Staff.objects.all()
     # Check if a new hall is being added
     if 'hall' in request.POST:
         # Get the selected provost and hall admin from the form data
-        provost = Provost.objects.get(provostId=int(request.POST.get('provost')))
-        admin = HallAdmin.objects.get(adminId=int(request.POST.get('admin')))
+        provost = Provost.objects.get(email=request.POST.get('provost'))
+        admin = HallAdmin.objects.get(email=request.POST.get('admin'))
         # Create a new hall object with data from the form
         newHall = Hall(
             hallId=int(request.POST.get('id')),
@@ -40,7 +42,8 @@ def varsityAdmin(request):
     # Prepare context data to pass to the template
     context = {
         'provostList': provostList,
-        'adminList': adminList
+        'adminList': adminList,
+        'staffList':staffList
     }
 
     # Render the varsityAdmin template with the context data

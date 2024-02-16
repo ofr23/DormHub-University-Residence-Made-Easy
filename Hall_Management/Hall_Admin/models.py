@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class HallAdmin(models.Model):
     """
     Model representing a Hall Admin.
