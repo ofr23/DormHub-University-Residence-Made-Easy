@@ -2,7 +2,6 @@ from django.db import models
 from Provost.models import Provost  # Import the Provost model
 from Hall_Admin.models import HallAdmin  # Import the HallAdmin model
 
-
 # Define the models for the Varsity_Admin app
 
 class VarsityAdmin(models.Model):
@@ -23,7 +22,6 @@ class Hall(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     hallAdmin = models.ForeignKey(HallAdmin, on_delete=models.CASCADE)
     provost = models.ForeignKey(Provost, on_delete=models.CASCADE)
-
     def __str__(self):
         # String representation of the Hall object
         return str(self.name) + " - " + str(self.hallId)

@@ -40,30 +40,42 @@ def register(request):
     """
     if 'register' in request.POST:
         if request.POST.get('type') == '1':
-            newUser = Provost.objects.get(email=request.POST.get('email'))
-            newUser.username = request.POST.get('username')
-            newUser.password = request.POST.get('password')
+            newUser = Provost(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                username=request.POST.get('username'),
+                password=request.POST.get('password')
+            )
             newUser.save()
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')
         if request.POST.get('type') == '2':
-            newUser = HallAdmin.objects.get(email=request.POST.get('email'))
-            newUser.username = request.POST.get('username')
-            newUser.password = request.POST.get('password')
+            newUser = HallAdmin(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                username=request.POST.get('username'),
+                password=request.POST.get('password')
+            )
             newUser.save()
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')
         if request.POST.get('type') == '3':
-            newUser = Student.objects.get(email=request.POST.get('email'))
-            newUser.username = request.POST.get('username')
-            newUser.password = request.POST.get('password')
+            newUser = Student(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                username=request.POST.get('username'),
+                password=request.POST.get('password')
+            )
             newUser.save()
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')
         if request.POST.get('type') == '4':
-            newUser = Staff.objects.get(email=request.POST.get('email'))
-            newUser.username = request.POST.get('username')
-            newUser.password = request.POST.get('password')
+            newUser = Staff(
+                name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                username=request.POST.get('username'),
+                password=request.POST.get('password')
+            )
             newUser.save()
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')

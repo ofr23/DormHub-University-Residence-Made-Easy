@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 from Hall_Admin.models import HallAdmin
 from Varsity_Admin.models import Room, Hall  # Import Hall and Room models
+=======
+from Varsity_Admin.models import Hall, Room  # Import Hall and Room models
+>>>>>>> f3f61727b63cb6afa26d1f4171b20472953bd74b
 from Student.models import Student, Session  # Import Student and Session models
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from openpyxl import load_workbook
-
+from .models import *
 
 def provost(request):
     # Get the provost object based on the logged-in user
