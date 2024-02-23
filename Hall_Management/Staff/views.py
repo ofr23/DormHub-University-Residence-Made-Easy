@@ -1,29 +1,39 @@
+"""
+Django Views Documentation
+
+This module defines views representing staff members and visitors.
+"""
+
+import datetime
 from django.shortcuts import render, redirect
 from .models import Staff, Visitor
-import datetime
-
 
 def staff(request):
     """
-    View function for staff page.
+    View function for rendering the staff page.
 
     If 'visitor' is in the POST request, redirects to 'visitorToday' page.
     Otherwise, renders the 'staff.html' template.
+
+    :param request: HTTP request object
+    :return: HTTP response object
     """
     if 'visitor' in request.POST:
         return redirect('/staff/visitorToday')
     return render(request, 'staff.html')
 
-
 def visitorToday(request):
     """
-    View function for visitorToday page.
+    View function for rendering the visitorToday page.
 
     Retrieves today's date and the staff member.
     Retrieves the list of visitors for today in the staff member's hall.
     If 'add' is in the POST request, adds a new visitor record.
     If 'departure' is in the POST request, updates the departure time of the visitor.
     Renders the 'visitorToday.html' template with the context.
+
+    :param request: HTTP request object
+    :return: HTTP response object
     """
     today = datetime.datetime.now().date()
     staff = Staff.objects.get(email=request.user.email)

@@ -1,4 +1,5 @@
-from Hall_Admin.models import Hall, Room  # Import Hall and Room models
+from Hall_Admin.models import HallAdmin
+from Varsity_Admin.models import Room, Hall  # Import Hall and Room models
 from Student.models import Student, Session  # Import Student and Session models
 from django.contrib import messages
 from django.shortcuts import render, redirect
