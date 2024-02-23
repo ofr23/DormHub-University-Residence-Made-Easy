@@ -68,15 +68,12 @@
            <div itemprop="articleBody">
              
   <h1>Source code for Staff.views</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Django Views Documentation</span>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
-<span class="sd">This module defines views representing staff members and visitors.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Staff</span><span class="p">,</span> <span class="n">Visitor</span>
+
 
 <div class="viewcode-block" id="staff"><a class="viewcode-back" href="../../index.html#Staff.views.staff">[docs]</a><span class="k">def</span> <span class="nf">staff</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -91,6 +88,7 @@
     <span class="k">if</span> <span class="s1">&#39;visitor&#39;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/staff/visitorToday&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;staff.html&#39;</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="visitorToday"><a class="viewcode-back" href="../../index.html#Staff.views.visitorToday">[docs]</a><span class="k">def</span> <span class="nf">visitorToday</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>

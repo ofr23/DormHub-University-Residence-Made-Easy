@@ -25,7 +25,7 @@ class Staff(models.Model):
     email = models.EmailField(unique=True, max_length=100)
     username = models.CharField(max_length=100, default='')
     password = models.CharField(max_length=100, default='')
-    hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         """
@@ -52,7 +52,7 @@ class Visitor(models.Model):
         departure (TimeField): The departure time of the visitor.
     """
 
-    hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE,null=True)
     visitorId = models.IntegerField(default=0, null=True, blank=True)
     date = models.DateField(default=datetime.datetime.now().date())
     name = models.CharField(max_length=100, null=True, blank=True)

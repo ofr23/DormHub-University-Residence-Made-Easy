@@ -1,12 +1,9 @@
-"""
-Django Views Documentation
-
-This module defines views representing staff members and visitors.
-"""
-
 import datetime
+
 from django.shortcuts import render, redirect
+
 from .models import Staff, Visitor
+
 
 def staff(request):
     """
@@ -21,6 +18,7 @@ def staff(request):
     if 'visitor' in request.POST:
         return redirect('/staff/visitorToday')
     return render(request, 'staff.html')
+
 
 def visitorToday(request):
     """
