@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.shortcuts import render
-
+from Provost.models import *
 
 def logIn(request):
     """
