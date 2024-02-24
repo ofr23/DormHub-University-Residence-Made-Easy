@@ -13,7 +13,7 @@ from . import views
 urlpatterns = [
     # URL pattern for the main staff view
     path('', views.staff, name='staff'),
-
+    path('repairRequests/',views.repairRequests,name='repairRequests'),
     # URL pattern for the visitorToday view
     path('visitorToday/', views.visitorToday, name='visitorToday'),
 ]
