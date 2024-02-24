@@ -40,6 +40,13 @@
       form label {
         display: block;
       }
+      h2 {
+        background: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        width: 300px;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,6 +55,7 @@
   <body>
     <div class="con">
       <form method="POST">
+        <h2>Room No - {{room}}</h2>
         {%csrf_token%}
         <h1>Apply to change room</h1>
         <textarea

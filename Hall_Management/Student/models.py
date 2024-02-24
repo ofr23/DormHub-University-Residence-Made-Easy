@@ -56,6 +56,7 @@ class SwapRequest(models.Model):
     student=models.ForeignKey(Student,null=True,on_delete=models.CASCADE)
     reason=models.CharField(max_length=200,null=True)
     status=models.IntegerField(default=0,null=True)
+    noOfRequests=models.IntegerField(default=0,null=True)
     hall=models.ForeignKey(Hall,on_delete=models.CASCADE,null=True)
     def __str__(self):
         return str(self.student.studentId)+" - "+str(self.hall.hallId)
