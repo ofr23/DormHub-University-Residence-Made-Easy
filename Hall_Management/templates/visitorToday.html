@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        padding: 100px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      table {
+        width: 80%;
+        margin: auto;
+        background: whitesmoke;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 15px;
+      }
+      thead th {
+        background: black;
+        color: white;
+      }
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: black;
+        letter-spacing: 1px;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 400;
+      }
+      h1 span {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #444;
+        word-spacing: 1px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 500;
+
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-template-rows: 27px 0;
+        grid-gap: 20px;
+        align-items: center;
+      }
+
+      h1 span:after,
+      h1 span:before {
+        content: " ";
+        display: block;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        height: 5px;
+        background-color: #f8f8f8;
+      }
+      .jj {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: whitesmoke;
+        width: 400px;
+        border-radius: 15px;
+        margin-top: 50px;
+        padding: 30px;
+      }
+      .jj input {
+        padding: 20px;
+        width: 300px;
+        border-radius: 2px;
+        padding: 15px;
+        border: none;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .jj input > * {
+        font-family: "Courier New", Courier, monospace;
+      }
+      form button {
+        padding: 10px;
+        width: 300px;
+        background: indigo;
+        font-size: 18px;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 20px;
+        font-weight: 800;
+      }
+      .ok {
+        width: 170px;
+        font-size: 15px;
+      }
+      button:hover {
+        background: black;
+        color: white;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="nine">
+      {{hall.name}} Hall
+      <span> Visitor log for {{today}} </span>
+    </h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Reason for visit</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+        </tr>
+      </thead>
+      {%for record in visitorList%}
+      <tr>
+        <th>{{record.name}}</th>
+        <th>{{record.phone}}</th>
+        <th>{{record.visit}}</th>
+        <th>{{record.arrival}}</th>
+        {%if record.departure is None%}
+        <th>
+          <form method="POST">
+            {%csrf_token%}
+            <button
+              class="ok"
+              type="submit"
+              value="{{record.visitorId}}"
+              name="departure"
+            >
+              Record Departure
+            </button>
+          </form>
+        </th>
+        {%else%}
+        <th>{{record.departure}}</th>
+        {%endif%}
+      </tr>
+      {%endfor%}
+    </table>
+    <form method="POST" class="jj">
+      {%csrf_token%}
+      <input type="text" name="name" placeholder="Enter Name" />
+      <input type="text" name="phone" placeholder="Enter Phone" />
+      <input
+        type="textarea"
+        name="visit"
+        placeholder="Enter Reason to Visit...."
+      />
+
+      <button type="submit" name="add">Entry Record</button>
+    </form>
+  </body>
+</html>
