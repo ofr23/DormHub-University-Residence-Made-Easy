@@ -3,25 +3,42 @@
   <head>
     <style>
       body {
-        display: flexc;
+        display: flex;
         justify-content: center;
         align-items: center;
-        background: indianred;
+        background: white;
+        height: 100vh;
+        font-family: "Courier New", Courier, monospace;
       }
-      .con {
+      .con form {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         background-color: whitesmoke;
         padding: 20px;
+        width: 600px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         border-radius: 10px;
+      }
+      .con h2 {
+        text-align: center;
+        font-size: 40px;
+        border: 2px dashed black;
       }
       .con button {
         font-size: 20px;
-        padding: 10px;
-        width: 300px;
-        border: 2px dashed darksalmon;
+        padding: 20px;
+        width: 400px;
+        margin-bottom: 20px;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .con button:hover {
+        background: salmon;
       }
     </style>
     <meta charset="UTF-8" />
@@ -30,25 +47,29 @@
   </head>
   <body>
     <div class="con">
-      <h1>All Sessions</h1>
-      {%for o,i in queryDict.items%} {%if i is 1%}
-      <button
-        type="submit"
-        name="add"
-        value="{{o.session}}"
-        style="background: rgb(7, 189, 86)"
-      >
-        Session {{o.session}} completed.
-      </button>
-      {%else%}
-      <button
-        type="submit"
-        name="add"
-        value="{{o.session}}"
-        style="background: crimson"
-      >
-        Add Students of Session {{o.session}}
-      </button>
+      <h2>All Sessions</h2>
+      {%for o,i in queryDict.items%}
+      <form method="POST">
+        {%csrf_token%} {%if i is 1%}
+        <button
+          type="submit"
+          name="add"
+          value="{{o.session}}"
+          style="background: rgb(7, 189, 86)"
+          disabled
+        >
+          Session {{o.session}} completed.
+        </button>
+        {%else%}
+        <button
+          type="submit"
+          name="add"
+          value="{{o.session}}"
+          style="background: crimson"
+        >
+          Add Students of Session {{o.session}}
+        </button>
+      </form>
       {%endif%} {%endfor%}
     </div>
   </body>

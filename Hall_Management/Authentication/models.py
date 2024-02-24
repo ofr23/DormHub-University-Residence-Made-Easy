@@ -1,3 +1,4 @@
-from django.db import models
+"""
+   No models for this module
 
-# Create your models here.
+   """

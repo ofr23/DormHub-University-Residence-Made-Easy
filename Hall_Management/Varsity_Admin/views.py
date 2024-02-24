@@ -1,55 +1,50 @@
-import re
-import json
-import datetime
-from decimal import Decimal
-from urllib import response
-from io import BytesIO
-from django.utils.html import strip_tags
-from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
-from django.template.loader import get_template,render_to_string
-from django.views import View
-from xhtml2pdf import pisa
-from django.core.mail import send_mail,EmailMessage
-from django.conf import settings
-from django.http import HttpResponse
-from django.shortcuts import redirect
-from django.utils import timezone
-from django.db import IntegrityError
-from django.contrib import messages
-import json
-import csv
-import random
-import pandas as pd
 from Student.models import *
+from django.shortcuts import redirect
+from Varsity_Admin.models import *
+from Provost.models import *
 from Hall_Admin.models import *
-from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.models import Group,User
-import codecs
-from openpyxl import load_workbook
+from Staff.models import *
 def varsityAdmin(request):
+    # Check if a new session is being added
     if 'session' in request.POST:
-        newSession=Session(
+        # Create a new session object with data from the form
+        newSession = Session(
             session=request.POST.get('sess'),
             csvFile=request.FILES.get('csv')
         )
+        # Save the new session object to the database
         newSession.save()
+        # Redirect to the varsityAdmin page
         return redirect('/varsityAdmin')
-    provostList=Provost.objects.filter()
-    adminList=HallAdmin.objects.filter()
+
+    # Get lists of provosts and hall admins for rendering in the template
+    provostList = Provost.objects.all()
+    adminList = HallAdmin.objects.all()
+    staffList=Staff.objects.all()
+    # Check if a new hall is being added
     if 'hall' in request.POST:
-        provost=Provost.objects.get(provostId=int(request.POST.get('provost')))
-        admin=HallAdmin.objects.get(adminId=int(request.POST.get('admin')))
-        newHall=Hall(
+        # Get the selected provost and hall admin from the form data
+        provost = Provost.objects.get(email=request.POST.get('provost'))
+        admin = HallAdmin.objects.get(email=request.POST.get('admin'))
+        # Create a new hall object with data from the form
+        newHall = Hall(
             hallId=int(request.POST.get('id')),
             name=request.POST.get('name'),
             provost=provost,
             hallAdmin=admin
         )
+        # Save the new hall object to the database
         newHall.save()
+        # Redirect to the varsityAdmin page
         return redirect('/varsityAdmin')
-    cont={
-        'provostList':provostList,
-        'adminList':adminList
+
+    # Prepare context data to pass to the template
+    context = {
+        'provostList': provostList,
+        'adminList': adminList,
+        'staffList':staffList
     }
-    return render(request,'varsityAdmin.html',cont)
+
+    # Render the varsityAdmin template with the context data
+    return render(request, 'varsityAdmin.html', context)

@@ -77,13 +77,13 @@
         <select name="provost" id="">
           <option selected disabled>Select Provost</option>
           {%for provost in provostList%}
-          <option value="{{provost.provostId}}">{{provost.name}}</option>
+          <option value="{{provost.email}}">{{provost.name}}</option>
           {%endfor%}
         </select>
         <select name="admin" id="">
           <option selected disabled>Select Admin</option>
           {%for admin in adminList%}
-          <option value="{{admin.adminId}}">{{admin.name}}</option>
+          <option value="{{admin.email}}">{{admin.name}}</option>
           {%endfor%}
         </select>
         <button type="submit" name="hall">Create</button>
