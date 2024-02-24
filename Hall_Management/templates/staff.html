@@ -10,10 +10,7 @@
       <form method="POST">
         {%csrf_token%}
         <button type="submit" name="visitor">Visitor Log</button>
-        <button>Button2</button>
-        <button>Button3</button>
-        <button>Button4</button>
-        <button>Button5</button>
+        <button type="submit" name="requests">Repair Requests</button>
       </form>
     </div>
     {%if flag is 1%} {%endif%}

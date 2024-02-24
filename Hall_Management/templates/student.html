@@ -143,10 +143,10 @@
           <th>
             <p>{{o.reason}}</p>
           </th>
-          {%if o.status is 0%}
+          {%if o.date is None%}
           <th>Waiting</th>
           {%else%}
-          <th>{{o.schedule}}</th>
+          <th>{{o.date}}</th>
           {%endif%}
         </tr>
         {%endfor%}

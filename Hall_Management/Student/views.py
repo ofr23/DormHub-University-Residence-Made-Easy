@@ -15,7 +15,6 @@ def student(request):
                 student=student,
                 reason=request.POST.get('reason'),
             )
-    
             createRequest.save()
             createRequest.noOfRequests+=1
             createRequest.save()

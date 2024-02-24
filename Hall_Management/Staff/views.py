@@ -3,8 +3,8 @@ import datetime
 from django.shortcuts import render, redirect
 
 from .models import Staff, Visitor
-
-
+from Student.models import *
+import datetime
 def staff(request):
     """
     View function for rendering the staff page.
@@ -17,6 +17,8 @@ def staff(request):
     """
     if 'visitor' in request.POST:
         return redirect('/staff/visitorToday')
+    if 'requests' in request.POST:
+        return redirect('/staff/repairRequests')
     return render(request, 'staff.html')
 
 
@@ -66,3 +68,18 @@ def visitorToday(request):
         'visitorList': visitorList
     }
     return render(request, 'visitorToday.html', context)
+def repairRequests(request):
+    staff=Staff.objects.get(email=request.user.email)
+    hall=Hall.objects.get(hallId=staff.hall.hallId)
+    requests=RepairRequest.objects.filter(hall=hall)
+
+    if 'schedule' in request.POST:
+        req=RepairRequest.objects.get(requestId=int(request.POST.get('schedule')))
+        req.date=request.POST.get('date')
+        req.save()
+        print(request.POST.get('date'))
+        return redirect('/staff/repairRequests')
+    context={
+        'requests':requests
+    }
+    return render(request,'repairRequests.html',context)

@@ -67,6 +67,6 @@ class RepairRequest(models.Model):
     status=models.IntegerField(default=0,null=True)
     hall=models.ForeignKey(Hall,on_delete=models.CASCADE,null=True)
     requestType=models.IntegerField(default=0,null=True)
-    schdeule=models.DateField(null=True)
+    date=models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return str(self.student.studentId)+" - "+str(self.hall.hallId)
