@@ -15,7 +15,7 @@ def logIn(request):
         if request.POST.get('type') == '1':
             user = Provost.objects.get(email=request.POST.get('email'))
             login(request, authenticate(request, username=user.username, password=user.password))
-            redirectUrl = "/provost"
+            redirectUrl = "/provost/addStudent"
             return redirect(redirectUrl)
         if request.POST.get('type') == '2':
             user = HallAdmin.objects.get(email=request.POST.get('email'))

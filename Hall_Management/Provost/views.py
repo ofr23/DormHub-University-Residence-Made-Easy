@@ -1,5 +1,5 @@
 from Varsity_Admin.models import Hall, Room  # Import Hall and Room models
-from Student.models import Student, Session  # Import Student and Session models
+from Student.models import *  # Import Student and Session models
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from openpyxl import load_workbook
@@ -94,3 +94,23 @@ def addStudent(request):
         'queryDict': queryDict
     }
     return render(request, 'allStudent.html', context)
+def swapRequests(request):
+    provost=Provost.objects.get(email=request.user.email)
+    hall=Hall.objects.get(provost=provost)
+    requests=SwapRequest.objects.filter(hall=hall,status=0)
+    if 'accept' in request.POST:
+        req=SwapRequest.objects.get(hall=hall,student=
+                                      Student.objects.get(studentId=request.POST.get('accept')))
+        req.status=1
+        req.save()
+        return redirect('/provost/swapRequests')
+    if 'reject' in request.POST:
+        req=SwapRequest.objects.get(hall=hall,student=
+                                      Student.objects.get(studentId=request.POST.get('reject')))
+        req.status=2
+        req.save()
+        return redirect('/provost/swapRequests')
+    context={
+        'requests':requests
+    }
+    return render(request,'swapRequests.html',context)

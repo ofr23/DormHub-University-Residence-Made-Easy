@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
     # URL pattern for the Provost dashboard
     path('', views.provost, name='provost'),
-
+    path('swapRequests/',views.swapRequests,name='swapRequest'),
     # URL pattern for adding a student
     path('addStudent/', views.addStudent, name='addStudent'),
 ]

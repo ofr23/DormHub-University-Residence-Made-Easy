@@ -8,14 +8,23 @@ def student(request):
     room=student.room.roomId
     requests=RepairRequest.objects.filter(student=student,hall=hall)
     if 'change' in request.POST:
-        createRequest=SwapRequest(
-            hall=hall,
-            student=student,
-            reason=request.POST.get('reason'),
-        )
-        createRequest.save()
-        createRequest.noOfRequests+=1
-        createRequest.save()
+        ifPresent=SwapRequest.objects.filter(hall=hall,student=student)
+        if not ifPresent:
+            createRequest=SwapRequest(
+                hall=hall,
+                student=student,
+                reason=request.POST.get('reason'),
+            )
+    
+            createRequest.save()
+            createRequest.noOfRequests+=1
+            createRequest.save()
+        else:
+            createRequest=SwapRequest.objects.get(hall=hall,student=student)
+            createRequest.reason=request.POST.get('reason')
+            createRequest.status=0
+            createRequest.noOfRequests+=1
+            createRequest.save()
         return redirect('/student')
     if 'repair' in request.POST:
         requestId=len(RepairRequest.objects.filter())+1

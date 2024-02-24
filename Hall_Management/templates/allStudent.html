@@ -2,11 +2,15 @@
 <html lang="en">
   <head>
     <style>
+      * {
+        font-family: "Courier New", Courier, monospace;
+      }
       body {
         display: flex;
         justify-content: center;
         align-items: center;
         background: white;
+        flex-direction: column;
         height: 100vh;
         font-family: "Courier New", Courier, monospace;
       }
@@ -20,6 +24,20 @@
         width: 600px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         border-radius: 10px;
+      }
+      button {
+        padding: 10px;
+        width: 250px;
+        border: none;
+        margin-top: 10px;
+        font-size: 18px;
+        background: cornflowerblue;
+        color: white;
+      }
+      button a {
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
       }
       .con h2 {
         text-align: center;
@@ -72,5 +90,10 @@
       </form>
       {%endif%} {%endfor%}
     </div>
+    <button>
+      <a href="/provost"> Allocate Rooms </a></button
+    ><button>
+      <a href="/provost/swapRequests">View Requests</a>
+    </button>
   </body>
 </html>
