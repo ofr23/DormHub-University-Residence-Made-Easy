@@ -1,21 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      * {
+        font-family: "Courier New", Courier, monospace;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      form {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: whitesmoke;
+        margin-top: 50px;
+      }
+      form input {
+        width: 300px;
+        padding: 10px;
+        margin-top: 20px;
+        border: 1px solid black;
+      }
+      form button {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 18px;
+        background: cornflowerblue;
+        color: white;
+        border: none;
+        width: 200px;
+      }
+      form label {
+        display: block;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <form method="POST">
-      {%csrf_token%}
-      <input type="textarea" name="reason" placeholder="Add Reason... " />
-      <select name="room" id="">
-        <option selected disabled>Select Room</option>
-        {%for o in rooms%}
-        <option value="{{o.roomId}}">{{room.roomId}}</option>
-        {%endfor%}
-      </select>
-      <button type="submit">Submit Request</button>
-    </form>
+    <div class="con">
+      <form method="POST">
+        {%csrf_token%}
+        <h1>Apply to change room</h1>
+        <textarea
+          name="reason"
+          placeholder="Enter Reason"
+          rows="6"
+          cols="40"
+        ></textarea>
+        <button type="submit" name="change">Submit</button>
+      </form>
+    </div>
+    <div class="con">
+      <form method="POST">
+        <h1>Apply for Repair/Replacement</h1>
+        {%csrf_token%}
+        <h3>Choose the type of request</h3>
+        <label>Repair</label>
+        <input type="radio" value="1" name="type" />
+        <label>Replace</label>
+        <input type="radio" value="2" name="type" />
+        <textarea
+          name="reason"
+          placeholder="Enter Description"
+          rows="7"
+          cols="35"
+        ></textarea>
+        <button type="submit" name="repair">Submit</button>
+      </form>
+    </div>
   </body>
 </html>

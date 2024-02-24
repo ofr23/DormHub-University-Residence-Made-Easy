@@ -23,8 +23,9 @@ def logIn(request):
             redirectUrl = "/hallAdmin/"
             return redirect(redirectUrl)
         if request.POST.get('type') == '3':
+            user = Student.objects.get(email=request.POST.get('email'))
             login(request, authenticate(request, username=user.username, password=user.password))
-            redirectUrl = "/aadmin/" + str(user.shopId)
+            redirectUrl = "/student" 
             return redirect(redirectUrl)
         if request.POST.get('type') == '4':
             user = Staff.objects.get(email=request.POST.get('email'))
@@ -60,12 +61,9 @@ def register(request):
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')
         if request.POST.get('type') == '3':
-            newUser = Student(
-                name=request.POST.get('name'),
-                email=request.POST.get('email'),
-                username=request.POST.get('username'),
-                password=request.POST.get('password')
-            )
+            newUser = Student.objects.get(email=request.POST.get('email'))
+            newUser.username=request.POST.get('username')
+            newUser.password=request.POST.get('password')
             newUser.save()
             user = User.objects.create_user(username=newUser.username, email=newUser.email, password=newUser.password)
             return redirect('/authentication')
