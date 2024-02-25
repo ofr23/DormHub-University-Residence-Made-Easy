@@ -1,10 +1,11 @@
 import datetime
 
+from Student.models import *
 from django.shortcuts import render, redirect
 
 from .models import Staff, Visitor
-from Student.models import *
-import datetime
+
+
 def staff(request):
     """
     View function for rendering the staff page.
@@ -12,8 +13,8 @@ def staff(request):
     If 'visitor' is in the POST request, redirects to 'visitorToday' page.
     Otherwise, renders the 'staff.html' template.
 
-    :param request: HTTP request object
-    :return: HTTP response object
+    :param request: HttpRequest object
+    :return: HttpResponse object
     """
     if 'visitor' in request.POST:
         return redirect('/staff/visitorToday')
@@ -32,8 +33,8 @@ def visitorToday(request):
     If 'departure' is in the POST request, updates the departure time of the visitor.
     Renders the 'visitorToday.html' template with the context.
 
-    :param request: HTTP request object
-    :return: HTTP response object
+    :param request: HttpRequest object
+    :return: HttpResponse object
     """
     today = datetime.datetime.now().date()
     staff = Staff.objects.get(email=request.user.email)
@@ -68,18 +69,30 @@ def visitorToday(request):
         'visitorList': visitorList
     }
     return render(request, 'visitorToday.html', context)
+
+
 def repairRequests(request):
-    staff=Staff.objects.get(email=request.user.email)
-    hall=Hall.objects.get(hallId=staff.hall.hallId)
-    requests=RepairRequest.objects.filter(hall=hall)
+    """
+    View function for rendering the repairRequests page.
+
+    Retrieves staff member and repair requests for the staff member's hall.
+    If 'schedule' is in the POST request, updates the date of the repair request.
+    Renders the 'repairRequests.html' template with the context.
+
+    :param request: HttpRequest object
+    :return: HttpResponse object
+    """
+    staff = Staff.objects.get(email=request.user.email)
+    hall = Hall.objects.get(hallId=staff.hall.hallId)
+    requests = RepairRequest.objects.filter(hall=hall)
 
     if 'schedule' in request.POST:
-        req=RepairRequest.objects.get(requestId=int(request.POST.get('schedule')))
-        req.date=request.POST.get('date')
+        req = RepairRequest.objects.get(requestId=int(request.POST.get('schedule')))
+        req.date = request.POST.get('date')
         req.save()
-        print(request.POST.get('date'))
         return redirect('/staff/repairRequests')
-    context={
-        'requests':requests
+
+    context = {
+        'requests': requests
     }
-    return render(request,'repairRequests.html',context)
+    return render(request, 'repairRequests.html', context)
