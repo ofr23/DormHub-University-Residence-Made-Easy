@@ -1,7 +1,10 @@
 from django.db import IntegrityError
 from django.test import TestCase
-from Hall_Admin.models import HallAdmin
-
+from Varsity_Admin.models import *
+from Provost.models import *
+from Student.models import *
+from Staff.models import *
+from Hall_Admin.models import *
 
 class HallAdminModelTests(TestCase):
 
