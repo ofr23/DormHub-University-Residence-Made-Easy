@@ -11,15 +11,10 @@ from Hall_Admin.models import HallAdmin
 from Varsity_Admin.models import *
 from django.db import IntegrityError
 from django.test import TestCase
-<<<<<<< HEAD:Hall_Management/tests/test_staffModels.py
-from Hall_Admin.models import HallAdmin 
+from Staff.models import *
 from Varsity_Admin.models import *
-from Staff.models import Staff, Visitor  # Update path based on model location
-import datetime
-=======
-
-from .models import Staff, Visitor  # Update path based on model location
->>>>>>> 5e7e625f06612b28a24163ca3144b4f5eec58192:Hall_Management/Staff/tests/test_models.py
+from Provost.models import *
+  # Update path based on model location
 
 
 class StaffModelTests(TestCase):
