@@ -1,11 +1,11 @@
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from django.urls import reverse
-from Student.models import Session
-from Varsity_Admin.models import Hall
-from Provost.models import Provost
-from Hall_Admin.models import HallAdmin
-from Staff.models import Staff
+from Varsity_Admin.models import *
+from Provost.models import *
+from Student.models import *
+from Staff.models import *
+from Hall_Admin.models import *
 from Varsity_Admin.views import *
 class VarsityAdminViewTestCase(TestCase):
     def setUp(self):

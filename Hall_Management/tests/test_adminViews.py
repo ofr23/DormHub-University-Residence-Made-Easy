@@ -1,8 +1,11 @@
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
-from Hall_Admin.models import *
-from Varsity_Admin.models import *
 from Hall_Admin.views import *
+from Varsity_Admin.models import *
+from Provost.models import *
+from Student.models import *
+from Staff.models import *
+from Hall_Admin.models import *
 class HallAdminViewTest(TestCase):
     def setUp(self):
         # Create a test user

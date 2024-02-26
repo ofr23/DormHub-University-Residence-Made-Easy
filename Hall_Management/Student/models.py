@@ -20,7 +20,6 @@ class Session(models.Model):
         """String representation of the session."""
         return str(self.session)
 
-
 class Student(models.Model):
     """
     Model representing a student.

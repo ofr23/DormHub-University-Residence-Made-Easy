@@ -1,7 +1,10 @@
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from Varsity_Admin.models import *
+from Provost.models import *
 from Student.models import *
+from Staff.models import *
+from Hall_Admin.models import *
 from Student.views import *
 from django.urls import reverse
 

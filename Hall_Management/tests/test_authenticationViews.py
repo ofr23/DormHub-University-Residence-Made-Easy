@@ -3,9 +3,11 @@ from django.test import Client
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.urls import reverse
+from Varsity_Admin.models import *
 from Provost.models import *
 from Student.models import *
 from Staff.models import *
+from Hall_Admin.models import *
 from Authentication.views import *
 
 # class LogInViewTestCase(TestCase):
