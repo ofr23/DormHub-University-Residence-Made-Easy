@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Clean temp directory
+      run: rm -rf *
+      working-directory: ./
     - run: |
         git fetch --prune --unshallow
     - name: Set up Python 3.8
