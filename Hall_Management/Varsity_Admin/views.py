@@ -1,11 +1,24 @@
-from django.shortcuts import render
-from Student.models import *
-from django.shortcuts import redirect
-from Varsity_Admin.models import *
-from Provost.models import *
 from Hall_Admin.models import *
+from Provost.models import *
 from Staff.models import *
+from Student.models import *
+from Varsity_Admin.models import *
+from django.shortcuts import render, redirect
+
+
 def varsityAdmin(request):
+    """
+    View function for the varsity admin page.
+
+    Handles addition of new sessions, halls, and associated staff.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object with the varsity admin page content.
+    """
+
     # Check if a new session is being added
     if 'session' in request.POST:
         # Create a new session object with data from the form
@@ -18,10 +31,11 @@ def varsityAdmin(request):
         # Redirect to the varsityAdmin page
         return redirect('/varsityAdmin')
 
-    # Get lists of provosts and hall admins for rendering in the template
+    # Get lists of provosts, hall admins, and staff for rendering in the template
     provostList = Provost.objects.all()
     adminList = HallAdmin.objects.all()
-    staffList=Staff.objects.all()
+    staffList = Staff.objects.all()
+
     # Check if a new hall is being added
     if 'hall' in request.POST:
         # Get the selected provost and hall admin from the form data
@@ -43,7 +57,7 @@ def varsityAdmin(request):
     context = {
         'provostList': provostList,
         'adminList': adminList,
-        'staffList':staffList
+        'staffList': staffList
     }
 
     # Render the varsityAdmin template with the context data

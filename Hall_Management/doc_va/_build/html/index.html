@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Hall Management System - University Admin’s documentation! &mdash; Hall Management System - University Admin 3.6.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=46cba840"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Hall Management System - University Admin
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Hall Management System - University Admin’s documentation!</a></li>
+<li><a class="reference internal" href="#varsity-admin-package">Varsity_Admin package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Varsity_Admin.admin">Varsity_Admin.admin module</a></li>
+<li><a class="reference internal" href="#module-Varsity_Admin.apps">Varsity_Admin.apps module</a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.apps.VarsityAdminConfig"><code class="docutils literal notranslate"><span class="pre">VarsityAdminConfig</span></code></a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.apps.VarsityAdminConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">VarsityAdminConfig.default_auto_field</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.apps.VarsityAdminConfig.name"><code class="docutils literal notranslate"><span class="pre">VarsityAdminConfig.name</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">VarsityAdminConfig.default_auto_field</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">VarsityAdminConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Varsity_Admin.models">Varsity_Admin.models module</a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall"><code class="docutils literal notranslate"><span class="pre">Hall</span></code></a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Hall.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Hall.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.hallAdmin"><code class="docutils literal notranslate"><span class="pre">Hall.hallAdmin</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.hallAdmin_id"><code class="docutils literal notranslate"><span class="pre">Hall.hallAdmin_id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.hallId"><code class="docutils literal notranslate"><span class="pre">Hall.hallId</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.id"><code class="docutils literal notranslate"><span class="pre">Hall.id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.name"><code class="docutils literal notranslate"><span class="pre">Hall.name</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.objects"><code class="docutils literal notranslate"><span class="pre">Hall.objects</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.provost"><code class="docutils literal notranslate"><span class="pre">Hall.provost</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.provost_id"><code class="docutils literal notranslate"><span class="pre">Hall.provost_id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.repairrequest_set"><code class="docutils literal notranslate"><span class="pre">Hall.repairrequest_set</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.room_set"><code class="docutils literal notranslate"><span class="pre">Hall.room_set</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.staff_set"><code class="docutils literal notranslate"><span class="pre">Hall.staff_set</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.student_set"><code class="docutils literal notranslate"><span class="pre">Hall.student_set</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.swaprequest_set"><code class="docutils literal notranslate"><span class="pre">Hall.swaprequest_set</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall.visitor_set"><code class="docutils literal notranslate"><span class="pre">Hall.visitor_set</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall..hallId"><code class="docutils literal notranslate"><span class="pre">Hall..hallId</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall..name"><code class="docutils literal notranslate"><span class="pre">Hall..name</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall..hallAdmin"><code class="docutils literal notranslate"><span class="pre">Hall..hallAdmin</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Hall..provost"><code class="docutils literal notranslate"><span class="pre">Hall..provost</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room"><code class="docutils literal notranslate"><span class="pre">Room</span></code></a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Room.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Room.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.capacity"><code class="docutils literal notranslate"><span class="pre">Room.capacity</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.color"><code class="docutils literal notranslate"><span class="pre">Room.color</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.hall"><code class="docutils literal notranslate"><span class="pre">Room.hall</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.hall_id"><code class="docutils literal notranslate"><span class="pre">Room.hall_id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.id"><code class="docutils literal notranslate"><span class="pre">Room.id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.objects"><code class="docutils literal notranslate"><span class="pre">Room.objects</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.roomId"><code class="docutils literal notranslate"><span class="pre">Room.roomId</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room.student_set"><code class="docutils literal notranslate"><span class="pre">Room.student_set</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room..roomId"><code class="docutils literal notranslate"><span class="pre">Room..roomId</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room..capacity"><code class="docutils literal notranslate"><span class="pre">Room..capacity</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room..hall"><code class="docutils literal notranslate"><span class="pre">Room..hall</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.Room..color"><code class="docutils literal notranslate"><span class="pre">Room..color</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin</span></code></a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.email"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.email</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.id"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.id</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.name"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.name</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.objects"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.objects</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.password"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.password</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin.username"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin.username</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin..name"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin..name</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin..email"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin..email</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin..username"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin..username</span></code></a></li>
+<li><a class="reference internal" href="#Varsity_Admin.models.VarsityAdmin..password"><code class="docutils literal notranslate"><span class="pre">VarsityAdmin..password</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Varsity_Admin.urls">Varsity_Admin.urls module</a></li>
+<li><a class="reference internal" href="#module-Varsity_Admin.views">Varsity_Admin.views module</a><ul>
+<li><a class="reference internal" href="#Varsity_Admin.views.varsityAdmin"><code class="docutils literal notranslate"><span class="pre">varsityAdmin()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Varsity_Admin">Module contents</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Hall Management System - University Admin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to Hall Management System - University Admin’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-hall-management-system-university-admin-s-documentation">
+<h1>Welcome to Hall Management System - University Admin’s documentation!<a class="headerlink" href="#welcome-to-hall-management-system-university-admin-s-documentation" title="Permalink to this heading"></a></h1>
+</section>
+<section id="varsity-admin-package">
+<h1>Varsity_Admin package<a class="headerlink" href="#varsity-admin-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-Varsity_Admin.admin">
+<span id="varsity-admin-admin-module"></span><h2>Varsity_Admin.admin module<a class="headerlink" href="#module-Varsity_Admin.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-Varsity_Admin.apps">
+<span id="varsity-admin-apps-module"></span><h2>Varsity_Admin.apps module<a class="headerlink" href="#module-Varsity_Admin.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Varsity_Admin.apps.VarsityAdminConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Varsity_Admin.apps.</span></span><span class="sig-name descname"><span class="pre">VarsityAdminConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Varsity_Admin/apps.html#VarsityAdminConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Varsity_Admin.apps.VarsityAdminConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<p>AppConfig class for configuring the Varsity_Admin app.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.apps.VarsityAdminConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><a class="headerlink" href="#Varsity_Admin.apps.VarsityAdminConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the default auto field to use for models in the app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.apps.VarsityAdminConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Varsity_Admin.apps.VarsityAdminConfig.name" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the name of the app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Varsity_Admin'</span></em><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Varsity_Admin.models">
+<span id="varsity-admin-models-module"></span><h2>Varsity_Admin.models module<a class="headerlink" href="#module-Varsity_Admin.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Varsity_Admin.models.</span></span><span class="sig-name descname"><span class="pre">Hall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Varsity_Admin/models.html#Hall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Varsity_Admin.models.Hall" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a hall in the university.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall..hallId">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">hallId</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall..hallId" title="Permalink to this definition"></a></dt>
+<dd><p>The unique identifier for the hall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall..name">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall..name" title="Permalink to this definition"></a></dt>
+<dd><p>The name of the hall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall..hallAdmin">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">hallAdmin</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall..hallAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>The hall admin associated with the hall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall..provost">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">provost</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall..provost" title="Permalink to this definition"></a></dt>
+<dd><p>The provost associated with the hall.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.hallAdmin">
+<span class="sig-name descname"><span class="pre">hallAdmin</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.hallAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.hallAdmin_id">
+<span class="sig-name descname"><span class="pre">hallAdmin_id</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.hallAdmin_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.hallId">
+<span class="sig-name descname"><span class="pre">hallId</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.hallId" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#Varsity_Admin.models.Hall.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.provost">
+<span class="sig-name descname"><span class="pre">provost</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.provost" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.provost_id">
+<span class="sig-name descname"><span class="pre">provost_id</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.provost_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.repairrequest_set">
+<span class="sig-name descname"><span class="pre">repairrequest_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.repairrequest_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.room_set">
+<span class="sig-name descname"><span class="pre">room_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.room_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.staff_set">
+<span class="sig-name descname"><span class="pre">staff_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.staff_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.student_set">
+<span class="sig-name descname"><span class="pre">student_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.student_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.swaprequest_set">
+<span class="sig-name descname"><span class="pre">swaprequest_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.swaprequest_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Hall.visitor_set">
+<span class="sig-name descname"><span class="pre">visitor_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Hall.visitor_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Varsity_Admin.models.</span></span><span class="sig-name descname"><span class="pre">Room</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Varsity_Admin/models.html#Room"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Varsity_Admin.models.Room" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a room in a hall.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room..roomId">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">roomId</span></span><a class="headerlink" href="#Varsity_Admin.models.Room..roomId" title="Permalink to this definition"></a></dt>
+<dd><p>The unique identifier for the room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room..capacity">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">capacity</span></span><a class="headerlink" href="#Varsity_Admin.models.Room..capacity" title="Permalink to this definition"></a></dt>
+<dd><p>The capacity of the room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room..hall">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">hall</span></span><a class="headerlink" href="#Varsity_Admin.models.Room..hall" title="Permalink to this definition"></a></dt>
+<dd><p>The hall to which the room belongs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room..color">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#Varsity_Admin.models.Room..color" title="Permalink to this definition"></a></dt>
+<dd><p>The color associated with the room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.capacity">
+<span class="sig-name descname"><span class="pre">capacity</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.capacity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.color">
+<span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.color" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.hall">
+<span class="sig-name descname"><span class="pre">hall</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.hall" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.hall_id">
+<span class="sig-name descname"><span class="pre">hall_id</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.hall_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#Varsity_Admin.models.Room.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.roomId">
+<span class="sig-name descname"><span class="pre">roomId</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.roomId" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.Room.student_set">
+<span class="sig-name descname"><span class="pre">student_set</span></span><a class="headerlink" href="#Varsity_Admin.models.Room.student_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Varsity_Admin.models.</span></span><span class="sig-name descname"><span class="pre">VarsityAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Varsity_Admin/models.html#VarsityAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a Varsity Admin.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin..name">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin..name" title="Permalink to this definition"></a></dt>
+<dd><p>The name of the Varsity Admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin..email">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin..email" title="Permalink to this definition"></a></dt>
+<dd><p>The email address of the Varsity Admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin..username">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin..username" title="Permalink to this definition"></a></dt>
+<dd><p>The username of the Varsity Admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin..password">
+<span class="sig-prename descclassname"><span class="pre">.</span></span><span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin..password" title="Permalink to this definition"></a></dt>
+<dd><p>The password of the Varsity Admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.email" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.password" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Varsity_Admin.models.VarsityAdmin.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#Varsity_Admin.models.VarsityAdmin.username" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Varsity_Admin.urls">
+<span id="varsity-admin-urls-module"></span><h2>Varsity_Admin.urls module<a class="headerlink" href="#module-Varsity_Admin.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-Varsity_Admin.views">
+<span id="varsity-admin-views-module"></span><h2>Varsity_Admin.views module<a class="headerlink" href="#module-Varsity_Admin.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="Varsity_Admin.views.varsityAdmin">
+<span class="sig-prename descclassname"><span class="pre">Varsity_Admin.views.</span></span><span class="sig-name descname"><span class="pre">varsityAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Varsity_Admin/views.html#varsityAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Varsity_Admin.views.varsityAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>View function for the varsity admin page.</p>
+<p>Handles addition of new sessions, halls, and associated staff.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The HTTP response object with the varsity admin page content.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-Varsity_Admin">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Varsity_Admin" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Shagor Hossain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
