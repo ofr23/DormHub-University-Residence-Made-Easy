@@ -22,6 +22,6 @@ jobs:
     
     - name: Run Tests with pytest
       run: | 
-       PYTHONPATH: ./Hall_Management
+       pythonpath: ./Hall_Management
        python manage.py runserver
      
