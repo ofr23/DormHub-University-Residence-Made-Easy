@@ -20,6 +20,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Setting directory
+      run: |
       working-directory: ./Hall_Management
     - name: Run Tests with pytest
       run: | 
