@@ -25,5 +25,6 @@ jobs:
     - name: Run Tests with pytest
       run: | 
         pytest
- 
+      env:
+        DJANGO_SETTINGS_MODULE: Hall_Management.settings
      
