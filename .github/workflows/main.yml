@@ -19,13 +19,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Clean temp directory
-      run: rm -rf *
-      working-directory: ./Hall_Management/
+    - name: Setting directory
+      working-directory: ./Hall_Management
     - name: Run Tests with pytest
       run: | 
         pytest
-      env:
-        pythonpath: .
-        DJANGO_SETTINGS_MODULE: Hall_Management.settings
+ 
      
