@@ -1,6 +1,10 @@
 from django.db import IntegrityError
 from django.test import TestCase
-from Provost.models import Provost  # Update path based on model location
+from Varsity_Admin.models import *
+from Provost.models import *
+from Student.models import *
+from Staff.models import *
+from Hall_Admin.models import * # Update path based on model location
 
 
 class ProvostModelTests(TestCase):

@@ -2,6 +2,9 @@ from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from Staff.views import *
 from Varsity_Admin.models import *
+from Provost.models import *
+from Student.models import *
+from Staff.models import *
 from Hall_Admin.models import *
 from django.urls import reverse
 import datetime
