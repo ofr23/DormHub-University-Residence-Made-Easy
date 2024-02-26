@@ -22,5 +22,5 @@ jobs:
     
     - name: Run Tests with pytest 
       working-directory: ./Hall_Management
-      run: python manage.py runserver
+      run: pytest
      
