@@ -23,6 +23,6 @@ jobs:
       run: | 
         pytest
       env:
-        pythonpath: ..
+        pythonpath: .
         DJANGO_SETTINGS_MODULE: Hall_Management.settings
      
