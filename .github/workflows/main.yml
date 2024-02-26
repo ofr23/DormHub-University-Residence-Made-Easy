@@ -20,8 +20,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Run Tests with pytest
-      run: | 
-       working-directory: .../Hall_Management
-       python manage.py runserver
+    - name: Run Tests with pytest 
+      working-directory: ./Hall_Management
+      run: python manage.py runserver
      
