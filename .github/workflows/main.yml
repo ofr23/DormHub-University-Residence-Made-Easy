@@ -15,9 +15,6 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name : Setting up directory
-      run: |
-      working-directory: /Hall_Management
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -25,5 +22,6 @@ jobs:
     
     - name: Run Tests with pytest
       run: | 
+       PYTHONPATH: ./Hall_Management
        python manage.py runserver
      
