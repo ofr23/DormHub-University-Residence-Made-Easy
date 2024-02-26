@@ -48,7 +48,6 @@ class HallModelTests(TestCase):
 
     # Add more test cases for Hall as needed (e.g., unique constraints, field limitations)
 
-
 class RoomModelTests(TestCase):
 
     def setUp(self):
