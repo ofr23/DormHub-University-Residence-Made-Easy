@@ -1,6 +1,6 @@
 # DormHub: University Residence Made Easy
 
-Welcome to the README for ! This document provides information on how to set up and launch the project locally also the project description, architecture and the workflow of how the project was developed along with a brief description of the team which developed this project.
+Welcome to the README for DormHub: University Residence Made Easy! This document provides information on how to set up and launch the project locally also the project description, architecture and the workflow of how the project was developed along with a brief description of the team which developed this project.
 
 ## Team - Fullsoftware Fusion
 We are team Fullsoftware Fusion from CSE, Jahangirnagar University. We are passionate about developing quality software products from scratch. We developed this project as a software quality assurance project of one of our academic courses.
