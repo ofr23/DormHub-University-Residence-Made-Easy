@@ -38,7 +38,7 @@ Before getting started, ensure you have the following installed on your machine:
 
     ```bash
 
-   cd MenuMinglee
+   cd Hall_Management
 
 3. Create a virtual environment (optional but recommended):
 
@@ -88,31 +88,69 @@ Before getting started, ensure you have the following installed on your machine:
 
    python manage.py runserver
    ```
+<!--
+# Project Description
 
-## Examples of Work:
-### Feature-1: Contact Page By Tazel
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_tazel.gif" width="512" >
+## Overview
 
-### Feature-2: Event Page By Tazel
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature2_by_tazel.gif" width="512" >
+Th.
 
-### Feature-3: Home Page By Munny
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_munny.gif" width="512" >
+## Features
 
-### Feature-4: Product Page By Sohana
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_sohana.gif" width="512" >
+### Authentication
 
-### Feature-5: Shopping Cart Page By Munia
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_munia.gif" width="512" >
+The app incorporates robust authentication to secure user accounts and ensure a personalized experience. 
+There are two types of users who will be using this system:
+- Restaurant Owners
+- Employees
+![Login Page](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Login%20Page.jpg)
+  
+![Signup Page](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Signup%20Page.jpg)
 
-### Feature-6: Blog Page By Prema
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_prema.gif" width="512" >
+### Restaurant Management
 
-### Feature-7: About Page By Akash
-<img src="https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/feature_by_akash.gif" width="512" >
+- **Creating Restaurant:** Administrators/restaurant owners can create new restaurants to participate in the lunch voting process.
+  ![Creating Restaurant](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Creating%20Restaurant.jpg)
+- **Uploading Menu:** Restaurants can upload their menus, showcasing the variety of dishes they offer.
+
+![Uploading Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Updating%20Menu.jpg)
 
 
+### Employee Management
 
+- **Creating Employee:** New employees can be added to the system, allowing them to participate in the voting process.
+ ![Creating Employee Account](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Authentication%20Successful.jpg)
+
+
+### Voting Process
+
+- **Getting Current Day Menu:** Users can view the menus of participating restaurants for the current day.
+![Available Restaurants](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Available%20restaurants%20with%20menu.jpg)
+
+   ![Getting Menu](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Menu.jpg)
+   
+- **Voting for Restaurant Menu:** Employees can cast their votes for their preferred dishes and contribute to the decision-making process.
+
+  ![Voting Process](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Voting%20Process.jpg)
+
+
+### Results and Restrictions
+
+- **Getting Results:** The app displays the results of the voting process, revealing the winning restaurant and menu for the day.
+- **Anti-Repetition Rule:** To maintain variety, the winner restaurant is restricted from winning for three consecutive working days.
+ 
+![Vote Results](https://github.com/nafizfouad/MenuMinglee/blob/main/Screenshot/Vote%20Count%20of%20a%20particular%20day.jpg)
+
+### Logout
+
+For security and user management, the app includes a logout feature to end user sessions.
+
+## Implementation
+
+The MenuMinglee Web App is implemented using the Django web framework, providing a scalable and maintainable solution. The app features a clean and intuitive interface, making it easy for both administrators and employees to navigate and participate in the lunch voting process.
+
+
+-->
 
 Wiki Pages:<br>
 [![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/wiki)
