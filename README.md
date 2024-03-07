@@ -10,7 +10,7 @@ We are team Fullsoftware Fusion from CSE, Jahangirnagar University. We are passi
 2.`Afzal Hossain Babor` \
 3.`Mundim Ahsan Uosmoy` \
 4.`Omar Farouque` \
-5.`Md. Shagor Hossain` \
+5.`Md. Shagor Hossain`
 
 ## Skills and Expertise
 * ⚛ Django
