@@ -68,7 +68,7 @@ Before getting started, ensure you have the following installed on your machine:
 
     pip install -r requirements.txt
     ```
-    6. Apply database migrations:
+6. Apply database migrations:
 
     ```bash
 
