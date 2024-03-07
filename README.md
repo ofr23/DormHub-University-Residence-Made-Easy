@@ -161,7 +161,7 @@ Coding Principles:<br>
 Sphinx Documentation:<br>
 [![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/nafizfouad/DormHub-University-Residence-Made-Easy/wiki/Sphinx%E2%80%90Documentation)
 <br>
-Software Requirements Specification:<br>
+SRS:<br>
 [![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/nafizfouad/DormHub-University-Residence-Made-Easy/wiki/Software-Requirements-Specification)
 <br>
 
