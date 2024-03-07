@@ -117,22 +117,13 @@ Before getting started, ensure you have the following installed on your machine:
 Wiki Pages:<br>
 [![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/wiki)
 <br>
-Coding Standard:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/Updated_coding-standard.pdf)
+Coding Principles:<br>
+[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/nafizfouad/DormHub-University-Residence-Made-Easy/wiki/Coding-Principles)
 <br>
-TDD Report:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://sew-tdd.netlify.app/)
+Sphinx Documentation:<br>
+[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/nafizfouad/DormHub-University-Residence-Made-Easy/wiki/Sphinx%E2%80%90Documentation)
 <br>
-TDD Doc:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/TDD.pdf)
-<br>
-Documentation Site:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://documentation-sprint2-th.netlify.app/)
-<br>
-CIR:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/Continuous_Integration_Report(CIR).pdf)
-<br>
-Contribution Summary:<br>
-[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/Contribution_Summary.pdf)
+Software Requirements Specification:<br>
+[![Wiki Pages](https://github.com/JU-CSE-27/swe-wiki/blob/master/resources/check-it-out.svg)](https://github.com/nafizfouad/DormHub-University-Residence-Made-Easy/wiki/Software-Requirements-Specification)
 <br>
 
