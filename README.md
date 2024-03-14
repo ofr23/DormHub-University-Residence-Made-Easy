@@ -7,9 +7,9 @@ We are team Fullsoftware Fusion from CSE, Jahangirnagar University. We are passi
 
 ### Team Members
 1.`Md. Nafiz Fouad Sarker` \
-2.`Afzal Hossain Babor` \
-3.`Mundim Ahsan Uosmoy` \
-4.`Omar Farouque` \
+2.`MD OMAR FARUK` \
+3.`Afzal Hossain Babor` \
+4.`Munadim Ahsan Uosmoy` \
 5.`Md. Shagor Hossain`
 
 ## Skills and Expertise
